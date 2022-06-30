@@ -11,5 +11,4 @@ for link in soup.find_all('a'): #loops through all 'a' tags
     if temp.startswith('http') or temp.startswith(',') or temp.startswith('.'): #if the URL starts with comma, punctuation or is an actual link, skip
         continue
     links.append(temp) #append the URL to the links list
-rng = random.randint(0, len(links)) #get a random number between 0 and the length (amount of items) in the links list
-print(urljoin(url,links[rng])) #join the base URL with the relative link to create a working absolute URL, and print it
+print(urljoin(url,links[random.randint(0, len(links))]))
